@@ -15,9 +15,7 @@ class App extends Component {
 
 			newTodoDescription: ''
 		};
-		
 		this.deleteTodo= this.deleteTodo.bind(this);
-	
 	}
 
 	
@@ -37,11 +35,11 @@ class App extends Component {
 		
 	}
 
-	deleteTodo(todo, index) {
-		const todos= this.state.todos.slice(); 
-		const todo= todos[index];
-		this.state.todos.filter((todo, todoIndex) => {todoIndex === index});
-	
+	deleteTodo(id){
+		console.log(id);
+		this.setState({
+			todos: this.state.todos.filter(todo => todo.id !== id)
+		})
 	}
 			
 			
@@ -56,6 +54,7 @@ render() {
 						isCompleted={ todo.isCompleted } 
 						toggleComplete={ () => this.toggleComplete(index)} 
 						deleteTodo={()=>this.deleteTodo(index)}
+						todoKey = {todo.id }
 					
 					/>
 				)}
