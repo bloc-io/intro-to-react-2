@@ -38,10 +38,13 @@ class App extends Component {
 	}
 
 	deleteTodo(todo, index) {
-		const todos= this.state.todos.slice(); 
-		const todo= todos[index];
-		this.state.todos.filter((todo, todoIndex) => {todoIndex === index});
-	
+		const todosList = this.state.todos.slice(); 
+		const oneDelete = this.state.todosList.map(todo => {
+			return todo})
+		const oneDelete = 
+		const filteredList = this.state.todos.filter(function(todo => {
+			return todo !=== });
+		this.setState({todos: filteredList});
 	}
 			
 			
