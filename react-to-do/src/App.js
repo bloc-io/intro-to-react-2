@@ -33,9 +33,12 @@ class App extends Component {
 		this.setState({todos: [...this.state.todos, newToDo], newTodoDescription: '' });	
 	}
 
-	toggleComplete(index){
-		
-	}
+	toggleComplete(index) {
+    	const todos = this.state.todos.slice();
+    	const todo = todos[index];
+    	todo.isCompleted = todo.isCompleted ? false : true;
+		this.setState({ todos: todos });
+  	}
 
 	deleteTodo(todo, index) {
 		const todosList = this.state.todos.slice(); 
