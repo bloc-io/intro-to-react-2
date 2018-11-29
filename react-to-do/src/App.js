@@ -53,6 +53,15 @@ class App extends Component {
 		this.setState({todos: updatedVersion});
 		
 
+		console.log('this todo isCompleted', oneToDelete.isCompleted);
+		if (oneToDelete.isCompleted === true){
+			const updatedVersion = todosList.filter(todo => {
+				return todo !== oneToDelete}
+			);
+			this.setState({todos: updatedVersion });
+		}	
+
+
 	}
 			
 			
