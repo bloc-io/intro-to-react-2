@@ -40,14 +40,17 @@ class App extends Component {
 		this.setState({ todos: todos });
   	}
 
-	deleteTodo(todo, index) {
-		const todosList = this.state.todos.slice(); 
-		const oneDelete = this.state.todosList.map(todo => {
-			return todo})
-		const oneDelete = 
-		const filteredList = this.state.todos.filter(function(todo => {
-			return todo !=== });
-		this.setState({todos: filteredList});
+	deleteTodo(index) {
+		const todosList = this.state.todos.slice();
+		const oneToDelete = todosList[index];
+		console.log('is this correct?', oneToDelete);
+		console.log('the index of this todo is', index);
+		
+		const updatedVersion= todosList.filter(todo => {
+			return todo !== oneToDelete}
+		);
+		this.setState({todos: updatedVersion});
+		
 	}
 			
 			
@@ -61,7 +64,7 @@ render() {
 						description={ todo.description } 
 						isCompleted={ todo.isCompleted } 
 						toggleComplete={ () => this.toggleComplete(index)} 
-						deleteTodo={()=>this.deleteTodo(index)}
+						deleteTodo={()=> this.deleteTodo(index)}
 					
 					/>
 				)}
