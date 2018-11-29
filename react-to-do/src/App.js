@@ -45,12 +45,14 @@ class App extends Component {
 		const oneToDelete = todosList[index];
 		console.log('is this correct?', oneToDelete);
 		console.log('the index of this todo is', index);
-		
-		const updatedVersion= todosList.filter(todo => {
-			return todo !== oneToDelete}
-		);
-		this.setState({todos: updatedVersion});
-		
+		console.log('this todo isCompleted', oneToDelete.isCompleted);
+		if (oneToDelete.isCompleted === true){
+			const updatedVersion = todosList.filter(todo => {
+				return todo !== oneToDelete}
+			);
+			this.setState({todos: updatedVersion });
+		}	
+
 	}
 			
 			
